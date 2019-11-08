@@ -251,8 +251,8 @@ class ModelFieldSchema(GenericModel, GenericField):
 
     objects = ModelFieldSchemaManager()
 
-    null = models.BooleanField(default=False)
-    unique = models.BooleanField(default=False)
+    null = models.BooleanField(default=False, db_column='allow_null')
+    unique = models.BooleanField(default=False, db_column='is_unique')
     max_length = models.PositiveIntegerField(null=True)
 
     class Meta:
